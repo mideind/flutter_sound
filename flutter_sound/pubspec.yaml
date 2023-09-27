@@ -1,9 +1,9 @@
-name: flutter_sound
+name: flutter_soundfork
 version: 9.2.13
-description: 'Europe Stand With Ukraine. Pray for Ukraine. A complete api for audio playback and recording. Audio player, audio recorder.'
+description: 'A complete API for audio playback and recording. Audio player, audio recorder.'
 #author: dooboolab<dooboolab@gmail.com>
-homepage: https://flutter-sound.canardoux.xyz/readme.html
-repository: https://github.com/canardoux/flutter_sound
+homepage: https://github.com/mideind/flutter_soundfork
+repository: https://github.com/mideind/flutter_soundfork
 publish_to: none
 
 environment:
