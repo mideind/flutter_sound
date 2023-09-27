@@ -153,6 +153,7 @@ class MethodChannelFlutterSoundPlayer extends FlutterSoundPlayerPlatform {
     invokeMethod(callback, 'setLogLevel', {
       'logLevel': logLevel.index,
     });
+    return null;
   }
 
   @override

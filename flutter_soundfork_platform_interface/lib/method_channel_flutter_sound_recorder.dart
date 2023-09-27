@@ -138,6 +138,7 @@ class MethodChannelFlutterSoundRecorder extends FlutterSoundRecorderPlatform {
     invokeMethodVoid(callback, 'setLogLevel', {
       'logLevel': logLevel.index,
     });
+    return null;
   }
 
   @override

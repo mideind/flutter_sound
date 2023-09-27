@@ -89,7 +89,6 @@ abstract class FlutterSoundRecorderPlatform extends PlatformInterface {
 
   List<FlutterSoundRecorderCallback?> _slots = [];
 
-  @override
   int findSession(FlutterSoundRecorderCallback aSession) {
     for (var i = 0; i < _slots.length; ++i) {
       if (_slots[i] == aSession) {
@@ -99,7 +98,6 @@ abstract class FlutterSoundRecorderPlatform extends PlatformInterface {
     return -1;
   }
 
-  @override
   void openSession(FlutterSoundRecorderCallback aSession) {
     assert(findSession(aSession) == -1);
 
@@ -112,7 +110,6 @@ abstract class FlutterSoundRecorderPlatform extends PlatformInterface {
     _slots.add(aSession);
   }
 
-  @override
   void closeSession(FlutterSoundRecorderCallback aSession) {
     _slots[findSession(aSession)] = null;
   }
