@@ -3,10 +3,10 @@ version: 1.0.0
 description: The Dart interface to Flutter Soundfork.
 homepage: https://github.com/mideind/flutter_soundfork_platform_interface
 repository: https://github.com/mideind/flutter_soundfork_platform_interface
-environment:
-    sdk: '>=2.17.0 <4.0.0'
-    flutter: ">=1.12.0"
 
+environment:
+  sdk: '>=2.12.0 <4.0.0'
+  flutter: ">=2.17.0"
 
 dependencies:
   flutter:
@@ -15,10 +15,8 @@ dependencies:
   plugin_platform_interface: ^2.0.0
   logger: "^2.0.1"
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
   mockito: ^5.0.0
   pedantic: ^1.11.0
-

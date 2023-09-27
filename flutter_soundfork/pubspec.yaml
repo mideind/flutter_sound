@@ -1,0 +1,37 @@
+name: flutter_soundfork
+version: 1.0.0
+description: 'A complete API for audio playback and recording. Audio player, audio recorder.'
+homepage: https://github.com/mideind/flutter_soundfork
+repository: https://github.com/mideind/flutter_soundfork
+
+environment:
+  sdk: '>=2.12.0 <4.0.0'
+  flutter: ">=2.17.0"
+
+dependencies:
+  path_provider: ^2.0.2
+  recase: ^4.0.0
+  uuid: ^3.0.1
+  provider: ^6.0.0
+  path: ^1.8.0
+  synchronized: ^3.0.0
+  logger: "^2.0.1"
+  flutter:
+    sdk: flutter
+# ============================================================================
+  flutter_soundfork_platform_interface:
+    path: ../flutter_soundfork_platform_interface # Flutter Sound Dir
+# ============================================================================
+
+dev_dependencies:
+  pedantic: ^1.11.0
+
+# The following section is specific to Flutter.
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.dooboolab.fluttersound
+        pluginClass: FlutterSound
+      ios:
+        pluginClass: FlutterSound
