@@ -69,7 +69,7 @@
     },
     {
       "name": "logger",
-      "rootUri": "file:///Users/sveinbjorn/.pub-cache/hosted/pub.dev/logger-2.0.2",
+      "rootUri": "file:///Users/sveinbjorn/.pub-cache/hosted/pub.dev/logger-2.0.2+1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -170,7 +170,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2023-09-21T15:16:41.787929Z",
+  "generated": "2023-09-27T19:22:11.040398Z",
   "generator": "pub",
   "generatorVersion": "3.1.2"
 }
