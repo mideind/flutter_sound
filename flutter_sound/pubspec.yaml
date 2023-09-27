@@ -1,13 +1,11 @@
 name: flutter_soundfork
 version: 9.2.13
 description: 'A complete API for audio playback and recording. Audio player, audio recorder.'
-#author: dooboolab<dooboolab@gmail.com>
 homepage: https://github.com/mideind/flutter_soundfork
 repository: https://github.com/mideind/flutter_soundfork
-publish_to: none
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.17.0 <4.0.0'
   flutter: ">=2.0.0"
 
 dependencies:
@@ -17,14 +15,12 @@ dependencies:
   provider: ^6.0.0
   path: ^1.8.0
   synchronized: ^3.0.0
-  logger: ">=2.0.1"
+  logger: "^2.0.1"
   flutter:
     sdk: flutter
 # ============================================================================
-  flutter_sound_platform_interface:
-    path: ../flutter_sound_platform_interface # Flutter Sound Dir
-  flutter_sound_web:
-    path: ../flutter_sound_web # Flutter Sound Dir
+  flutter_soundfork_platform_interface:
+    path: ../flutter_soundfork_platform_interface # Flutter Sound Dir
 # ============================================================================
 
 dev_dependencies:
@@ -39,13 +35,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.dooboolab.fluttersound
+        package: is.mideind.fluttersoundfork
         pluginClass: FlutterSound
       ios:
         pluginClass: FlutterSound
-      web:
-        default_package: flauto_web
-        ####fileName: flutter_sound_web.dart
 
 
   # To add assets to your plugin package, add an assets section, like this:

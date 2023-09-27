@@ -24,7 +24,7 @@ import 'dart:async';
 import 'dart:core';
 import 'dart:typed_data';
 
-import 'package:flutter_sound_platform_interface/flutter_sound_recorder_platform_interface.dart';
+import 'package:flutter_soundfork_platform_interface/flutter_sound_recorder_platform_interface.dart';
 import 'package:logger/logger.dart' show Level, Logger;
 import 'package:path/path.dart' as p;
 import 'package:synchronized/synchronized.dart';
@@ -171,8 +171,7 @@ class FlutterSoundRecorder implements FlutterSoundRecorderCallback {
     _logger.d('---> openRecorderCompleted: $success');
 
     _recorderState = RecorderState.values[state!];
-    _isInited =
-        success! ? Initialized.fullyInitialized : Initialized.notInitialized;
+    _isInited = success! ? Initialized.fullyInitialized : Initialized.notInitialized;
     if (success) {
       _openRecorderCompleter!.complete(this);
     } else {
@@ -493,8 +492,7 @@ class FlutterSoundRecorder implements FlutterSoundRecorderCallback {
     // - encode CAF/OPPUS (with native Apple AVFoundation)
     // - remux CAF file format to OPUS file format (with ffmpeg)
 
-    result = await FlutterSoundRecorderPlatform.instance
-        .isEncoderSupported(this, codec: codec);
+    result = await FlutterSoundRecorderPlatform.instance.isEncoderSupported(this, codec: codec);
     return result;
   }
 
@@ -518,8 +516,7 @@ class FlutterSoundRecorder implements FlutterSoundRecorderCallback {
     if (_isInited != Initialized.fullyInitialized) {
       throw Exception('Recorder is not open');
     }
-    await FlutterSoundRecorderPlatform.instance
-        .setSubscriptionDuration(this, duration: duration);
+    await FlutterSoundRecorderPlatform.instance.setSubscriptionDuration(this, duration: duration);
     _logger.d('FS:<--- setSubscriptionDuration ');
   }
 
@@ -634,8 +631,7 @@ class FlutterSoundRecorder implements FlutterSoundRecorderCallback {
       if (codec == Codec.defaultCodec) {
         var codecExt = _getCodecFromExtension(extension);
         if (codecExt == null) {
-          throw _CodecNotSupportedException(
-              "File extension '$extension' not recognized.");
+          throw _CodecNotSupportedException("File extension '$extension' not recognized.");
         }
         codec = codecExt;
       }
@@ -649,10 +645,8 @@ class FlutterSoundRecorder implements FlutterSoundRecorderCallback {
       throw _CodecNotSupportedException('Codec not supported.');
     }
 
-    if ((toFile == null && toStream == null) ||
-        (toFile != null && toStream != null)) {
-      throw Exception(
-          'One, and only one parameter "toFile"/"toStream" must be provided');
+    if ((toFile == null && toStream == null) || (toFile != null && toStream != null)) {
+      throw Exception('One, and only one parameter "toFile"/"toStream" must be provided');
     }
 
     if (toStream != null && codec != Codec.pcm16) {
@@ -662,8 +656,7 @@ class FlutterSoundRecorder implements FlutterSoundRecorderCallback {
     // Maybe we should stop any recording already running... (stopRecorder does that)
     _userStreamSink = toStream;
     if (_startRecorderCompleter != null) {
-      _startRecorderCompleter!
-          .completeError('Killed by another startRecorder()');
+      _startRecorderCompleter!.completeError('Killed by another startRecorder()');
     }
     _startRecorderCompleter = Completer<void>();
     completer = _startRecorderCompleter;
@@ -779,8 +772,7 @@ class FlutterSoundRecorder implements FlutterSoundRecorderCallback {
     Completer<void>? completer;
     try {
       if (_pauseRecorderCompleter != null) {
-        _pauseRecorderCompleter!
-            .completeError('Killed by another pauseRecorder()');
+        _pauseRecorderCompleter!.completeError('Killed by another pauseRecorder()');
       }
       _pauseRecorderCompleter = Completer<void>();
       completer = _pauseRecorderCompleter;
@@ -820,8 +812,7 @@ class FlutterSoundRecorder implements FlutterSoundRecorderCallback {
     Completer<void>? completer;
     try {
       if (_resumeRecorderCompleter != null) {
-        _resumeRecorderCompleter!
-            .completeError('Killed by another resumeRecorder()');
+        _resumeRecorderCompleter!.completeError('Killed by another resumeRecorder()');
       }
       _resumeRecorderCompleter = Completer<void>();
       completer = _resumeRecorderCompleter;
@@ -854,8 +845,7 @@ class FlutterSoundRecorder implements FlutterSoundRecorderCallback {
     if (_isInited != Initialized.fullyInitialized) {
       throw Exception('Recorder is not open');
     }
-    var b = await FlutterSoundRecorderPlatform.instance
-        .deleteRecord(this, fileName);
+    var b = await FlutterSoundRecorderPlatform.instance.deleteRecord(this, fileName);
     _logger.d('FS:<--- deleteRecord');
     return b;
   }
@@ -872,8 +862,7 @@ class FlutterSoundRecorder implements FlutterSoundRecorderCallback {
     if (_isInited != Initialized.fullyInitialized) {
       throw Exception('Recorder is not open');
     }
-    var url =
-        await FlutterSoundRecorderPlatform.instance.getRecordURL(this, path);
+    var url = await FlutterSoundRecorderPlatform.instance.getRecordURL(this, path);
     return url;
   }
 }

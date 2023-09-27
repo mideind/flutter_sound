@@ -41,7 +41,7 @@
 /// @nodoc
 library everything;
 
-export 'package:flutter_sound_platform_interface/flutter_sound_platform_interface.dart';
+export 'package:flutter_soundfork_platform_interface/flutter_soundfork_platform_interface.dart';
 
 /// Main
 ///library tau;
