@@ -1,4 +1,3 @@
-## 9.2.13
+## 1.0.0
 
-- Please [look to this](https://dooboolab.github.io/flutter_sound/book/CHANGELOG.html)
-
+- First release of flutter_soundfork_platform_interface (adapted from flutter_sound_platform_interface)

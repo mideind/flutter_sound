@@ -1,4 +1,3 @@
-## 9.2.13
+## 1.0.0
 
-- ## The [CHANGELOG file is here](https://flutter-sound.canardoux.xyz/changelog.html)
-
+* First release of flutter_soundfork (adapted from flutter_sound)
