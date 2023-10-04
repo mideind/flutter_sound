@@ -1,5 +1,5 @@
 name: flutter_soundfork
-version: 1.0.0
+version: "1.0.1"
 description: 'A complete API for audio playback and recording. Audio player, audio recorder.'
 homepage: https://github.com/mideind/flutter_soundfork
 repository: https://github.com/mideind/flutter_soundfork
